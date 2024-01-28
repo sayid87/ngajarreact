@@ -1,8 +1,8 @@
 import axios from 'axios';
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
-import { baseUrl } from '../config/fungsi';
+import { baseUrl, judul } from '../config/fungsi';
 import { LoginContext } from '../context/LoginContext';
 
 const Login = () => {
@@ -36,6 +36,10 @@ const Login = () => {
             color: "red"
         }
     }
+
+    useEffect(() => {
+        document.title = `Login ${judul}`
+    }, []);
     return (
         <>
             <form onSubmit={handleSubmit(onSubmit)}>

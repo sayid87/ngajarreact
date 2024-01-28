@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate, useParams } from 'react-router-dom';
-import { baseUrl } from '../config/fungsi';
+import { baseUrl, judul } from '../config/fungsi';
 
 const Ubah = () => {
 
@@ -54,6 +54,10 @@ const Ubah = () => {
         }
 
     }
+
+    useEffect(() => {
+        document.title = `Ubah Member ${judul}`
+    }, []);
     return (
         <>
             {isLoading || detailMember == null ? (<>Loading</>) : (<>

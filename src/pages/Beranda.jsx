@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { baseUrl } from '../config/fungsi';
+import { baseUrl, judul } from '../config/fungsi';
 import { Link } from 'react-router-dom';
 
 const Beranda = () => {
@@ -21,6 +21,7 @@ const Beranda = () => {
     }
 
     useEffect(() => {
+        document.title = `List Member ${judul}`
         loadData()
     }, []);
 
